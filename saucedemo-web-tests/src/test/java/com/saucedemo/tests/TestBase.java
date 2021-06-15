@@ -1,5 +1,6 @@
-package com.saucedemo;
+package com.saucedemo.tests;
 
+import com.saucedemo.appmanager.ApplicationManager;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
