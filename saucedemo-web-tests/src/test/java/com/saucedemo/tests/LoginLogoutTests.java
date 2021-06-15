@@ -6,7 +6,7 @@ public class LoginLogoutTests extends TestBase {
 
     @Test
     public void testLoginLogout() throws Exception {
-        app.logout();
+        app.getSessionHelper().logout();
     }
 
 }

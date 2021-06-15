@@ -3,11 +3,10 @@ package com.saucedemo.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class OrderHelper {
-    private WebDriver wd;
+public class OrderHelper extends HelperBase {
 
     public OrderHelper(WebDriver wd) {
-        this.wd = wd;
+        super(wd);
     }
 
     public void addProduct(String s) {
@@ -27,20 +26,15 @@ public class OrderHelper {
     }
 
     public void fillPostalCode(String postalcode) {
-        wd.findElement(By.id("postal-code")).click();
-        wd.findElement(By.id("postal-code")).clear();
-        wd.findElement(By.id("postal-code")).sendKeys(postalcode);
+        type(By.id("postal-code"), postalcode);
     }
 
+
     public void fillLastName(String lastname) {
-        wd.findElement(By.id("last-name")).click();
-        wd.findElement(By.id("last-name")).clear();
-        wd.findElement(By.id("last-name")).sendKeys(lastname);
+        type(By.id("last-name"), lastname);
     }
 
     public void fillFirstName(String firstname) {
-        wd.findElement(By.id("first-name")).click();
-        wd.findElement(By.id("first-name")).clear();
-        wd.findElement(By.id("first-name")).sendKeys(firstname);
+        type(By.id("first-name"), firstname);
     }
 }

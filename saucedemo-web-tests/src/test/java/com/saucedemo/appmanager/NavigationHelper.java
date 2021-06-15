@@ -3,18 +3,17 @@ package com.saucedemo.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NavigationHelper {
-    private WebDriver wd;
+public class NavigationHelper extends HelperBase{
 
     public NavigationHelper(WebDriver wd) {
-        this.wd = wd;
+        super(wd);
     }
 
     public void goToCart() {
-        wd.findElement(By.xpath("//div[@id='shopping_cart_container']/a/span")).click();
+        click(By.xpath("//div[@id='shopping_cart_container']/a/span"));
     }
 
     public void returnToProductPage() {
-        wd.findElement(By.id("back-to-products")).click();
+        click(By.id("back-to-products"));
     }
 }
