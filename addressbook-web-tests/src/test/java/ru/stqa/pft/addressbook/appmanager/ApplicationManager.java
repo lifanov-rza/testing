@@ -28,8 +28,6 @@ public class ApplicationManager {
 
     }
 
-
-
     public void stop() {
         wd.quit();
         String verificationErrorString = verificationErrors.toString();
@@ -47,14 +45,6 @@ public class ApplicationManager {
       }
     }
 
-    private boolean isAlertPresent() {
-      try {
-        wd.switchTo().alert();
-        return true;
-      } catch (NoAlertPresentException e) {
-        return false;
-      }
-    }
 
     private String closeAlertAndGetItsText() {
       try {
