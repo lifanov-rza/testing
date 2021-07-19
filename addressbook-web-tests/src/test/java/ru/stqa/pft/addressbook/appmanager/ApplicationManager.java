@@ -21,10 +21,10 @@ public class ApplicationManager {
         baseUrl = "https://www.google.com/";
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
-        sessionHelper.login("admin", "secret");
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper = new SessionHelper(wd);
+        sessionHelper.login("admin", "secret");
 
     }
 
