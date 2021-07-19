@@ -2,6 +2,12 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,9 +21,26 @@ public class ApplicationManager {
     private String baseUrl;
     private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
+    private String browser;
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public void init() {
-        wd = new ChromeDriver();
+        if (browser.equals(BrowserType.CHROME)) {
+            ChromeOptions co = new ChromeOptions();
+            co.addArguments("--headless");
+            wd = new ChromeDriver();
+        } else if (browser.equals(BrowserType.FIREFOX)) {
+            FirefoxOptions fo = new FirefoxOptions();
+            fo.addArguments("--headless");
+            wd = new FirefoxDriver();
+        } else if (browser.equals(BrowserType.OPERA)) {
+            OperaOptions oo = new OperaOptions();
+            oo.addArguments("--headless");
+            wd = new OperaDriver();
+        }
         baseUrl = "https://www.google.com/";
         wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/");
