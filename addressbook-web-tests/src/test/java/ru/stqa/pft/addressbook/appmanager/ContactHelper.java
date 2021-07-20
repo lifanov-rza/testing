@@ -33,7 +33,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactModification() {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[7]/td[8]"));
+        click(By.xpath("//table[@id='maintable']//img[@title='Edit']"));
     }
 
     public void submitContactModification() {
@@ -50,5 +50,15 @@ public class ContactHelper extends HelperBase {
 
     public void confirmDeletion() {
         wd.switchTo().alert().accept();
+    }
+
+    public boolean isContactPresent() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    public void createContact(ContactData contactData, boolean creation) {
+        fillContactForm(contactData, creation);
+        submitContactCreation();
+        returnToHomePage();
     }
 }
