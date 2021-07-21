@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class ContactModificationTests extends TestBase {
@@ -14,19 +15,28 @@ public class ContactModificationTests extends TestBase {
         if (!app.getContactHelper().isContactPresent()) {
             List<ContactData> before = app.getContactHelper().getContactList();
             app.getNavigationHelper().gotoAddContactPage();
-            app.getContactHelper().createContact(new ContactData("Oleg", "Ivanov", "Antonovich", "IL", "123"), true);
+            app.getContactHelper().createContact(new ContactData("Oleg", "Ivanov", "Antonovich", "123"), true);
             List<ContactData> after = app.getContactHelper().getContactList();
             Assert.assertEquals(after.size(), before.size() + 1);
         }
-        //TODO неверно работает проверка при модификации групп. Группа удаляется при модификации.
+
         app.getNavigationHelper().gotoHomePage();
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initContactModification(before.size() - 1);
-        app.getContactHelper().fillContactForm(new ContactData("qwerty", "123", "345", "567", null), false);
+        ContactData contact = new ContactData("qwerty", "123", "345", null);
+        app.getContactHelper().fillContactForm(contact, false);
         app.getContactHelper().submitContactModification();
         app.getContactHelper().returnToHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
-        Assert.assertEquals(after.size(), before.size());
+        //Assert.assertEquals(after.size(), before.size());
+
+
+        before.remove(before.size() - 1);
+        before.add(contact);
+        Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
+        before.sort(byId);
+        after.sort(byId);
+        Assert.assertEquals(after, before);
     }
 
 }

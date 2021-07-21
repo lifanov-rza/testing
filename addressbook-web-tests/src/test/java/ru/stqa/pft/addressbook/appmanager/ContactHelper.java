@@ -21,7 +21,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("middlename"), contactData.getMiddlename());
         type(By.name("lastname"), contactData.getLastname());
-        type(By.name("nickname"), contactData.getNickname());
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroupname());
         } else {
@@ -81,7 +80,8 @@ public class ContactHelper extends HelperBase {
         for (WebElement element : elements) {
             String lastname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[2]")).getText();
             String firstname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[3]")).getText();
-            ContactData contact = new ContactData(firstname, null, lastname, null, null);
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            ContactData contact = new ContactData(id, firstname, null, lastname, null);
             contacts.add(contact);
             id_tr++;
         }
