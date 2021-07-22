@@ -6,10 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -49,6 +50,10 @@ public class ContactHelper extends HelperBase {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
 
+    public void selectById(int id) {
+        wd.findElement(By.xpath("//input[@value='" + id + "']")).click();
+    }
+
     public void deleteSelectedContacts() {
         click(By.xpath("//input[@value='Delete']"));
     }
@@ -71,8 +76,8 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public void modify(ContactData contact, int index) {
-        initContactModification(index);
+    public void modify(ContactData contact) {
+        initContactModification(contact.getId());
         fillContactForm(contact, false);
         submitContactModification();
         returnToHomePage();
@@ -94,4 +99,22 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
+    public Set<ContactData> all() {
+        Set<ContactData> contacts = new HashSet<>();
+        List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
+        int id_tr = 2;
+        for (WebElement element : elements) {
+            String lastname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[2]")).getText();
+            String firstname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[3]")).getText();
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+            ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
+            contacts.add(contact);
+            id_tr++;
+        }
+        return contacts;
+    }
+
+
 }
+
