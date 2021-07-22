@@ -45,7 +45,7 @@ public class ContactHelper extends HelperBase {
         click(By.name("update"));
     }
 
-    public void selectContact(int index) {
+    public void select(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
 
@@ -61,7 +61,7 @@ public class ContactHelper extends HelperBase {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public void createContact(ContactData contactData, boolean creation) {
+    public void create(ContactData contactData, boolean creation) {
         fillContactForm(contactData, creation);
         submitContactCreation();
         returnToHomePage();
@@ -71,9 +71,16 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
+    public void modify(ContactData contact, int index) {
+        initContactModification(index);
+        fillContactForm(contact, false);
+        submitContactModification();
+        returnToHomePage();
+    }
+
 
     //TODO Требуется адаптировать xpath по поиску в таблице
-    public List<ContactData> getContactList() {
+    public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<>();
         List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
         int id_tr = 2;
@@ -81,7 +88,7 @@ public class ContactHelper extends HelperBase {
             String lastname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[2]")).getText();
             String firstname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactData contact = new ContactData(id, firstname, null, lastname, null);
+            ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
             contacts.add(contact);
             id_tr++;
         }
