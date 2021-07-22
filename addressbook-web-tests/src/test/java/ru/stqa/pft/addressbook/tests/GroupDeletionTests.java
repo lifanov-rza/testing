@@ -14,7 +14,7 @@ public class GroupDeletionTests extends TestBase {
         app.goTo().groupPage();
         if (app.group().list().size() == 0) {
             List<GroupData> before = app.group().list();
-            app.group().create(new GroupData("123", null, null));
+            app.group().create(new GroupData().withName("test1"));
             List<GroupData> after = app.group().list();
             Assert.assertEquals(after.size(), before.size() + 1);
         }
