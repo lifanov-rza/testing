@@ -1,7 +1,5 @@
 package ru.stqa.pft.addressbook.model;
 
-import java.util.Objects;
-
 public class GroupData {
     private final String name;
     private final String header;

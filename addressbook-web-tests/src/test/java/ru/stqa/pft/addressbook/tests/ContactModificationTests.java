@@ -11,16 +11,16 @@ public class ContactModificationTests extends TestBase {
 
     @Test
     public void testContactModification() {
-        app.getNavigationHelper().gotoHomePage();
+        app.goTo().gotoHomePage();
         if (!app.getContactHelper().isContactPresent()) {
             List<ContactData> before = app.getContactHelper().getContactList();
-            app.getNavigationHelper().gotoAddContactPage();
+            app.goTo().gotoAddContactPage();
             app.getContactHelper().createContact(new ContactData("Oleg", "Ivanov", "Antonovich", "123"), true);
             List<ContactData> after = app.getContactHelper().getContactList();
             Assert.assertEquals(after.size(), before.size() + 1);
         }
 
-        app.getNavigationHelper().gotoHomePage();
+        app.goTo().gotoHomePage();
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initContactModification(before.size() - 1);
         ContactData contact = new ContactData("qwerty", "123", "345", null);
