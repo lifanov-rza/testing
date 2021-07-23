@@ -6,34 +6,29 @@ public class ContactData {
     private String lastname;
     private String groupname;
     private int id;
+    private String address;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ContactData that = (ContactData) o;
-
-        if (id != that.id) return false;
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
+    public ContactData withHomePhone(String homePhone) {
+        this.homePhone = homePhone;
+        return this;
     }
 
-    @Override
-    public int hashCode() {
-        int result = firstname != null ? firstname.hashCode() : 0;
-        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + id;
-        return result;
+    public ContactData withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
     }
 
-    @Override
-    public String toString() {
-        return "ContactData{" +
-                "firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", id=" + id +
-                '}';
+    public ContactData withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public ContactData withWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
+        return this;
     }
 
     public ContactData withFirstname(String firstname) {
@@ -79,5 +74,34 @@ public class ContactData {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ContactData that = (ContactData) o;
+
+        if (id != that.id) return false;
+        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+        return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstname != null ? firstname.hashCode() : 0;
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        result = 31 * result + id;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactData{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

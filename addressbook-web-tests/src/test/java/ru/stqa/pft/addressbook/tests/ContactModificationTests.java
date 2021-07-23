@@ -12,10 +12,10 @@ public class ContactModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePredictions() {
-        app.navigate().homePage();
+        app.goTo().homePage();
         if (app.contact().all().size() == 0) {
             Contacts before = app.contact().all();
-            app.navigate().addContactPage();
+            app.goTo().addContactPage();
             app.contact().create(new ContactData().withFirstname("Oleg").withLastname("Ivanov")
                     .withMiddlename("Antonovich").withGroupname("test1"), true);
             assertThat(app.contact().count(), equalTo(before.size()+1));
@@ -24,7 +24,7 @@ public class ContactModificationTests extends TestBase {
 
     @Test
     public void testContactModification() {
-        app.navigate().homePage();
+        app.goTo().homePage();
         Contacts before = app.contact().all();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData().withId(modifiedContact.getId())
