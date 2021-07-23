@@ -61,9 +61,6 @@ public class ApplicationManager {
         }
     }
 
-
-
-
     private String closeAlertAndGetItsText() {
       try {
         Alert alert = wd.switchTo().alert();
