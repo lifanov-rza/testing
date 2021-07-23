@@ -93,6 +93,6 @@ public class GroupHelper extends HelperBase {
     }
 
     private void selectGroupById(int id) {
-        wd.findElement(By.xpath("//input[@value='" + id + "']")).click();
+        wd.findElement(By.xpath(String.format("//input[@value='%s']", id))).click();
     }
 }

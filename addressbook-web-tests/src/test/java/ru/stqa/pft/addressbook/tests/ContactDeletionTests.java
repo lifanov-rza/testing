@@ -12,10 +12,10 @@ public class ContactDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePredictions() {
-        app.goTo().homePage();
+        app.navigate().homePage();
         if (app.contact().all().size() == 0) {
             Contacts before = app.contact().all();
-            app.goTo().addContactPage();
+            app.navigate().addContactPage();
             app.contact().create(new ContactData().withFirstname("Oleg").withLastname("Ivanov")
                     .withMiddlename("Antonovich").withGroupname("test1"), true);
             assertThat(app.contact().count(), equalTo(before.size() + 1));
@@ -27,7 +27,7 @@ public class ContactDeletionTests extends TestBase {
         Contacts before = app.contact().all();
         ContactData deletedContact = before.iterator().next();
         app.contact().delete(deletedContact);
-        app.goTo().homePage();
+        app.navigate().homePage();
         assertThat(app.contact().count(), equalTo(before.size() - 1));
         Contacts after = app.contact().all();
         assertThat(after, equalTo(before.without(deletedContact)));

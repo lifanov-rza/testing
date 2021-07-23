@@ -38,9 +38,9 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home page"));
     }
 
-    public void initContactModification(int index) {
-        String id = wd.findElements(By.name("selected[]")).get(index).getAttribute("id");
-        click(By.xpath("//a[@href='edit.php?id=" + id + "']"));
+    public void initContactModification(int id) {
+      //  String id = wd.findElements(By.name("selected[]")).get(index).getAttribute("id");
+        click(By.xpath(String.format("//a[@href='edit.php?id=%s']", id)));
     }
 
     public void submitContactModification() {
@@ -52,7 +52,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectById(int id) {
-        wd.findElement(By.xpath("//input[@value='" + id + "']")).click();
+        wd.findElement(By.xpath(String.format("//input[@value='%s']", id))).click();
     }
 
     public void deleteSelectedContacts() {
@@ -92,7 +92,7 @@ public class ContactHelper extends HelperBase {
         confirmDeletion();
         contactCache = null;
     }
-    
+
     public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<>();
         List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));

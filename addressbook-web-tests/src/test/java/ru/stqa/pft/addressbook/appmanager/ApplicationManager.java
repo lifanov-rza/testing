@@ -80,7 +80,7 @@ public class ApplicationManager {
         return groupHelper;
     }
 
-    public NavigationHelper goTo() {
+    public NavigationHelper navigate() {
         return navigationHelper;
     }
 

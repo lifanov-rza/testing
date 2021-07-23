@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-07-23T06:16:19" hostname="DESKTOP-M08RKIT" time="0.878">
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-07-23T06:49:11" hostname="DESKTOP-M08RKIT" time="0.847">
   <properties/>
-  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="0.878">
-    <failure message="java.lang.AssertionError: &#13;&#10;Expected: &lt;10&gt;&#13;&#10;     but: was &lt;9&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
-Expected: &lt;10&gt;
-     but: was &lt;9&gt;
+  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="0.847">
+    <failure message="java.lang.AssertionError: &#13;&#10;Expected: &lt;9&gt;&#13;&#10;     but: was &lt;8&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: &lt;9&gt;
+     but: was &lt;8&gt;
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
 	at ru.stqa.pft.addressbook.tests.ContactModificationTests.testContactModification(ContactModificationTests.java:33)
