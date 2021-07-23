@@ -13,6 +13,8 @@ import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
+    private Contacts contactCache = null;
+
     public ContactHelper(WebDriver wd) {
         super(wd);
     }
@@ -68,6 +70,7 @@ public class ContactHelper extends HelperBase {
     public void create(ContactData contactData, boolean creation) {
         fillContactForm(contactData, creation);
         submitContactCreation();
+        contactCache = null;
         returnToHomePage();
     }
 
@@ -79,7 +82,15 @@ public class ContactHelper extends HelperBase {
         initContactModification(contact.getId());
         fillContactForm(contact, false);
         submitContactModification();
+        contactCache = null;
         returnToHomePage();
+    }
+
+    public void delete(ContactData deletedContact) {
+        selectById(deletedContact.getId());
+        deleteSelectedContacts();
+        confirmDeletion();
+        contactCache = null;
     }
 
 
@@ -100,7 +111,10 @@ public class ContactHelper extends HelperBase {
     }
 
     public Contacts all() {
-        Contacts contacts = new Contacts();
+        if (contactCache != null) {
+            return new Contacts(contactCache);
+        }
+        contactCache = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
         int id_tr = 2;
         for (WebElement element : elements) {
@@ -108,10 +122,10 @@ public class ContactHelper extends HelperBase {
             String firstname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
-            contacts.add(contact);
+            contactCache.add(contact);
             id_tr++;
         }
-        return contacts;
+        return new Contacts(contactCache);
     }
 
 
