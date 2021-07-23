@@ -14,8 +14,8 @@ ru/stqa/pft/addressbook/model/ContactData.java
  ru.stqa.pft.addressbook.model.ContactData
 ru/stqa/pft/addressbook/model/Contacts.java
  ru.stqa.pft.addressbook.model.Contacts
-ru/stqa/pft/addressbook/tests/ContactPhonesTests.java
- ru.stqa.pft.addressbook.tests.ContactPhonesTests
+ru/stqa/pft/addressbook/tests/ContactFieldsTests.java
+ ru.stqa.pft.addressbook.tests.ContactFieldsTests
 ru/stqa/pft/addressbook/tests/TestBase.java
  ru.stqa.pft.addressbook.tests.TestBase
 ru/stqa/pft/addressbook/appmanager/ContactHelper.java
