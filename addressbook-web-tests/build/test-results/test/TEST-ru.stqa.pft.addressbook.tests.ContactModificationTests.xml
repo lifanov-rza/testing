@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-07-23T05:17:58" hostname="DESKTOP-M08RKIT" time="1.67">
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-07-23T06:16:19" hostname="DESKTOP-M08RKIT" time="0.878">
   <properties/>
-  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="1.67">
-    <failure message="java.lang.AssertionError: &#13;&#10;Expected: &lt;1&gt;&#13;&#10;     but: was &lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
-Expected: &lt;1&gt;
-     but: was &lt;0&gt;
+  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="0.878">
+    <failure message="java.lang.AssertionError: &#13;&#10;Expected: &lt;10&gt;&#13;&#10;     but: was &lt;9&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: &lt;10&gt;
+     but: was &lt;9&gt;
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
-	at ru.stqa.pft.addressbook.tests.ContactModificationTests.testContactModification(ContactModificationTests.java:35)
+	at ru.stqa.pft.addressbook.tests.ContactModificationTests.testContactModification(ContactModificationTests.java:33)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

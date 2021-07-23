@@ -92,20 +92,16 @@ public class ContactHelper extends HelperBase {
         confirmDeletion();
         contactCache = null;
     }
-
-
-    //TODO Требуется адаптировать xpath по поиску в таблице
+    
     public List<ContactData> list() {
         List<ContactData> contacts = new ArrayList<>();
-        List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
-        int id_tr = 2;
+        List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements) {
-            String lastname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[2]")).getText();
-            String firstname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[3]")).getText();
+            String lastname = element.findElement(By.xpath("//td[2]")).getText();
+            String firstname = element.findElement(By.xpath("//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
             contacts.add(contact);
-            id_tr++;
         }
         return contacts;
     }
@@ -115,19 +111,15 @@ public class ContactHelper extends HelperBase {
             return new Contacts(contactCache);
         }
         contactCache = new Contacts();
-        List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']//tr[@name='entry']"));
-        int id_tr = 2;
+        List<WebElement> elements = wd.findElements(By.xpath("//tr[@name='entry']"));
         for (WebElement element : elements) {
-            String lastname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[2]")).getText();
-            String firstname = element.findElement(By.xpath("//tr[" + id_tr + "]//td[3]")).getText();
+            String lastname = element.findElement(By.xpath("//td[2]")).getText();
+            String firstname = element.findElement(By.xpath("//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
             ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
             contactCache.add(contact);
-            id_tr++;
         }
         return new Contacts(contactCache);
     }
-
-
 }
 
