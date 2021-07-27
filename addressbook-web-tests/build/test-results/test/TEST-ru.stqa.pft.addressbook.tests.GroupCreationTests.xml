@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-07-27T06:26:29" hostname="DESKTOP-M08RKIT" time="19.114">
+  <properties/>
+  <testcase name="testGroupCreation[0](GroupData{name='Test 0', header='Header 0', footer='Footer 0'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="2.956"/>
+  <testcase name="testGroupCreation[1](GroupData{name='Test 1', header='Header 1', footer='Footer 1'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.905"/>
+  <testcase name="testGroupCreation[2](GroupData{name='Test 2', header='Header 2', footer='Footer 2'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.757"/>
+  <testcase name="testGroupCreation[3](GroupData{name='Test 3', header='Header 3', footer='Footer 3'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.686"/>
+  <testcase name="testGroupCreation[4](GroupData{name='Test 4', header='Header 4', footer='Footer 4'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.751"/>
+  <testcase name="testGroupCreation[5](GroupData{name='Test 5', header='Header 5', footer='Footer 5'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.763"/>
+  <testcase name="testGroupCreation[6](GroupData{name='Test 6', header='Header 6', footer='Footer 6'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.791"/>
+  <testcase name="testGroupCreation[7](GroupData{name='Test 7', header='Header 7', footer='Footer 7'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.754"/>
+  <testcase name="testGroupCreation[8](GroupData{name='Test 8', header='Header 8', footer='Footer 8'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.985"/>
+  <testcase name="testGroupCreation[9](GroupData{name='Test 9', header='Header 9', footer='Footer 9'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.759"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
