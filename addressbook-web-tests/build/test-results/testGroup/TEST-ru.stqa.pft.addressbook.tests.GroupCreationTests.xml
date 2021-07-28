@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-27T11:48:54" hostname="DESKTOP-M08RKIT" time="9.84">
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-27T13:37:33" hostname="DESKTOP-M08RKIT" time="11.349">
   <properties/>
-  <testcase name="testGroupCreation[0](GroupData{name='Test 0', header='Header 0', footer='Footer 0'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="4.499"/>
-  <testcase name="testGroupCreation[1](GroupData{name='Test 1', header='Header 1', footer='Footer 1'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="2.64"/>
-  <testcase name="testGroupCreation[2](GroupData{name='Test 2', header='Header 2', footer='Footer 2'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="2.698"/>
+  <testcase name="testGroupCreation[0](GroupData{name='Test 0', header='Header 0', footer='Footer 0'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="6.22"/>
+  <testcase name="testGroupCreation[1](GroupData{name='Test 1', header='Header 1', footer='Footer 1'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="2.491"/>
+  <testcase name="testGroupCreation[2](GroupData{name='Test 2', header='Header 2', footer='Footer 2'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="2.636"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

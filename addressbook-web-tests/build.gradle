@@ -4,15 +4,27 @@ repositories {
     mavenCentral()
 }
 
-task testGroup (type: Test) {
+task testGroup(type: Test) {
     useTestNG() {
         suites 'src/test/resources/testng-groups.xml/'
     }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
 }
 
-task testContact (type: Test) {
+task testContact(type: Test) {
     useTestNG() {
         suites 'src/test/resources/testng-contacts.xml/'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
     }
 }
 
@@ -23,4 +35,5 @@ dependencies {
     implementation 'com.beust:jcommander:1.81'
     implementation 'com.thoughtworks.xstream:xstream:1.4.17'
     implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'ch.qos.logback:logback-classic:1.3.0-alpha5'
 }
