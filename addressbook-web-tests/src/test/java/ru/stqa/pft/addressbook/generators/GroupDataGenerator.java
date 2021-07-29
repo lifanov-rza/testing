@@ -14,13 +14,13 @@ import java.util.List;
 
 public class GroupDataGenerator {
 
-    @Parameter(names = "-c", description = "Group count")
+    @Parameter(names = "-gc", description = "Group count")
     public int count;
 
-    @Parameter(names = "-f", description = "Target group file")
+    @Parameter(names = "-gf", description = "Target group file")
     public String file;
 
-    @Parameter(names = "-d", description = "Data format")
+    @Parameter(names = "-gd", description = "Data format")
     public String dataFormat;
 
 

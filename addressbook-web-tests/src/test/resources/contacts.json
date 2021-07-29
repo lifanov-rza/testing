@@ -1,0 +1,50 @@
+[
+  {
+    "firstname": "firstname 0",
+    "lastname": "Lastname 0",
+    "groupname": "Test 1",
+    "address": "Moscow, Arbat, home 0",
+    "homePhone": "111",
+    "email": "abra0@mail.ru"
+  },
+  {
+    "firstname": "firstname 1",
+    "lastname": "Lastname 1",
+    "groupname": "Test 1",
+    "address": "Moscow, Arbat, home 1",
+    "homePhone": "112",
+    "email": "abra1@mail.ru"
+  },
+  {
+    "firstname": "firstname 2",
+    "lastname": "Lastname 2",
+    "groupname": "Test 1",
+    "address": "Moscow, Arbat, home 2",
+    "homePhone": "113",
+    "email": "abra2@mail.ru"
+  },
+  {
+    "firstname": "firstname 3",
+    "lastname": "Lastname 3",
+    "groupname": "Test 1",
+    "address": "Moscow, Arbat, home 3",
+    "homePhone": "114",
+    "email": "abra3@mail.ru"
+  },
+  {
+    "firstname": "firstname 4",
+    "lastname": "Lastname 4",
+    "groupname": "Test 1",
+    "address": "Moscow, Arbat, home 4",
+    "homePhone": "115",
+    "email": "abra4@mail.ru"
+  },
+  {
+    "firstname": "firstname 5",
+    "lastname": "Lastname 5",
+    "groupname": "Test 1",
+    "address": "Moscow, Arbat, home 5",
+    "homePhone": "116",
+    "email": "abra5@mail.ru"
+  }
+]

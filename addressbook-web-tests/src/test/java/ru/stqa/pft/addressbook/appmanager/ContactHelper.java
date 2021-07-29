@@ -21,9 +21,12 @@ public class ContactHelper extends HelperBase {
 
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
-        type(By.name("middlename"), contactData.getMiddlename());
+        //type(By.name("middlename"), contactData.getMiddlename());
         type(By.name("lastname"), contactData.getLastname());
         attach(By.name("photo"), contactData.getPhoto());
+        type(By.xpath("//textarea[@name='address']"), contactData.getAddress());
+        type(By.xpath("//input[@name='home']"), contactData.getHomePhone());
+        type(By.xpath("//input[@name='email']"), contactData.getEmail());
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroupname());
         } else {
