@@ -5,7 +5,8 @@
     "groupname": "Test 1",
     "address": "Moscow, Arbat, home 0",
     "homePhone": "111",
-    "email": "abra0@mail.ru"
+    "email": "abra0@mail.ru",
+    "photo": "src\\test\\resources\\zel.jpg"
   },
   {
     "firstname": "firstname 1",
@@ -13,7 +14,8 @@
     "groupname": "Test 1",
     "address": "Moscow, Arbat, home 1",
     "homePhone": "112",
-    "email": "abra1@mail.ru"
+    "email": "abra1@mail.ru",
+    "photo": "src\\test\\resources\\zel.jpg"
   },
   {
     "firstname": "firstname 2",
@@ -21,7 +23,8 @@
     "groupname": "Test 1",
     "address": "Moscow, Arbat, home 2",
     "homePhone": "113",
-    "email": "abra2@mail.ru"
+    "email": "abra2@mail.ru",
+    "photo": "src\\test\\resources\\zel.jpg"
   },
   {
     "firstname": "firstname 3",
@@ -29,7 +32,8 @@
     "groupname": "Test 1",
     "address": "Moscow, Arbat, home 3",
     "homePhone": "114",
-    "email": "abra3@mail.ru"
+    "email": "abra3@mail.ru",
+    "photo": "src\\test\\resources\\zel.jpg"
   },
   {
     "firstname": "firstname 4",
@@ -37,7 +41,8 @@
     "groupname": "Test 1",
     "address": "Moscow, Arbat, home 4",
     "homePhone": "115",
-    "email": "abra4@mail.ru"
+    "email": "abra4@mail.ru",
+    "photo": "src\\test\\resources\\zel.jpg"
   },
   {
     "firstname": "firstname 5",
@@ -45,6 +50,7 @@
     "groupname": "Test 1",
     "address": "Moscow, Arbat, home 5",
     "homePhone": "116",
-    "email": "abra5@mail.ru"
+    "email": "abra5@mail.ru",
+    "photo": "src\\test\\resources\\zel.jpg"
   }
 ]

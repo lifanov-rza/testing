@@ -58,13 +58,14 @@ public class ContactDataGenerator {
 
     private List<ContactData> generateContacts(int count) {
         List<ContactData> contacts = new ArrayList<>();
+        File photo = new File("src/test/resources/zel.jpg");
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactData().withFirstname((String.format("firstname %s", i)))
                     .withLastname(String.format("Lastname %s", i))
                     .withAddress((String.format("Moscow, Arbat, home %s", i)))
                     .withHomePhone(String.valueOf(111 + i))
                     .withEmail(String.format("abra%s@mail.ru", i))
-                    .withGroupname("Test 1"));
+                    .withGroupname("Test 1").withPhoto(photo));
         }
         return contacts;
     }

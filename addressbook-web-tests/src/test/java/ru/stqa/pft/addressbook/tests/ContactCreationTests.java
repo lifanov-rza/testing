@@ -8,7 +8,6 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Iterator;
@@ -40,10 +39,7 @@ public class ContactCreationTests extends TestBase {
         app.goTo().homePage();
         Contacts before = app.contact().all();
         app.goTo().addContactPage();
-        File photo = new File("src/test/resources/zel.jpg");
-       // ContactData contact = new ContactData().withFirstname("Oleg").withLastname("Ivanov")
-       //         .withMiddlename("Antonovich").withGroupname("group2").withPhoto(photo);
-        app.contact().create(contact.withPhoto(photo), true);
+        app.contact().create(contact, true);
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.contact().all();
         assertThat(after, equalTo(before.withAdded(contact.withId(after.stream()
